@@ -1,0 +1,19 @@
+os:
+  - linux
+services:
+  - docker
+env:
+  matrix:
+    - APP=alerter
+    - APP=console
+    - APP=elasticsearch
+    - APP=logstash
+    - APP=zipkin
+    - APP=import-dashboards
+    - APP=curator
+install:
+  - docker version
+  - docker build -f bxyb214-"$APP"/Dockerfile -t bxyb214/bxyb214-"$APP":travis bxyb214-"$APP"/
+script:
+  - docker images
+  - docker inspect bxyb214/bxyb214-"$APP":travis

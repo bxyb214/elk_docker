@@ -1,0 +1,6 @@
+version: '2'
+services:
+    bxyb214-import-dashboards:
+        build: bxyb214-import-dashboards/
+        environment:
+            - ELASTICSEARCH_URL=http://$ELASTICSEARCH_HOST:$ELASTICSEARCH_PORT
