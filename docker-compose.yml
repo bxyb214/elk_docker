@@ -20,7 +20,7 @@ services:
             - ELASTICSEARCH_PORT=9200
             - LOGSTASH_DEBUG=true
         ports:
-            - "5000:5000"
+            - "5000:5000/udp"
             - "9600:9600"
         depends_on:
             - bxyb214-elasticsearch
